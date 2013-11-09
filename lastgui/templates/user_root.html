@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}{{ username }}{% endblock %}
+
+{% block content %}
+	
+	<h1 class="graphed">{{ username }} <small>{{ num_weeks }} weeks of data</small></h1>
+	
+	{% if flashes %}
+		<ul class="flashes">
+			{% for flash in flashes %}
+				<li>{{ flash }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	
+	<div class="sfeature">
+		<a href="artists/">
+			<img src="/static/images/artists_64.png" class="front" /> <br />
+			<p>Artist histories &raquo;</p>
+		</a>
+	</div>
+	
+	<div class="sfeature">
+		<a href="timeline/">
+			<img src="/static/images/timeline2_64.png" class="front" /> <br />
+			<p>Quick Timeline &raquo;</p>
+		</a>
+	</div>
+	
+	<div class="sfeature">
+		<a href="posters/">
+			<img src="/static/images/posters_64.png" class="front" /> <br />
+			<p>Timeline Posters &raquo;</p>
+		</a>
+	</div>
+	
+	<div class="sfeature">
+		<a href="export/">
+			<img src="/static/images/export_64.png" class="front" /> <br />
+			<p>Data Export &raquo;</p>
+		</a>
+	</div>
+	
+	{% if lfuser.external_allowed %}
+	<div class="sfeature">
+		<a href="sigs/">
+			<img src="/static/images/sigs_64.png" class="front" /> <br />
+			<p>Signature Images &raquo;</p>
+		</a>
+	</div>
+	{% endif %}
+	
+	<!--<div class="sfeature">
+		<a href="premium/">
+			<img src="/static/images/premium_64.png" class="front" /> <br />
+			<p>LastGraph Premium &raquo;</p>
+		</a>
+	</div>-->
+	
+	<div class="sfeature">
+		<a href="http://www.last.fm/user/{{ username }}/">
+			<img src="/static/images/lastfm_64.png" class="front" /> <br />
+			<p>Last.fm Profile &raquo;</p>
+		</a>
+	</div>
+	
+	<p class="padded after">
+		
+	</p>
+	
+{% endblock %}

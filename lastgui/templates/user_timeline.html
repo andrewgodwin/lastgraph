@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ username }}'s Timeline{% endblock %}
+
+{% block tagline %}This is {{ username }}'s overall <em>timeline</em>.{% endblock %}
+
+{% block content %}
+	
+	<img class="resizeable_graph" src="/graph/{{ username }}/timeline/" />
+	
+	<div class="export">
+		Export:&nbsp;
+		<!-- <a href="../export/all.xls" title="This data in XLS">
+			<img src="/static/images/page_excel.png" alt="This data in XLS" />
+		</a> -->
+		<a href="../export/all.csv" title="This data in CSV">
+			<img src="/static/images/page_white_text.png" alt="This data in CSV" />
+		</a>
+		<a href="../export/all.json" title="This data in JSON">
+			<img src="/static/images/page.png" alt="This data in JSON" />
+		</a>
+	</div>
+	
+	<p class="padded">If you want to see your timeline bigger, more detailed and prettier, head over to the <a href="../posters/">posters&nbsp;page</a>.</p>
+	
+{% endblock %}

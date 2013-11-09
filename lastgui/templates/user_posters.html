@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block extrahead %}<meta http-equiv="refresh" content="60;url=.">{% endblock %}
+
+{% block title %}{{ username }}'s Posters{% endblock %}
+
+{% block tagline %}Here you can request and download <em>posters</em>.{% endblock %}
+
+{% block content %}
+	
+	<p class='padded'>
+	This is a list of all the posters you've ordered to be generated recently. If you don't know much about LastGraph posters, you may want to read the <a href='/about/posters/'>short summary</a>. Note that posters will expire (and disappear from this page) after seven days.
+	</p>
+	
+	{% if flashes %}
+	<ul class="flashes">
+		{% for flash in flashes %}
+			<li>{{ flash }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	
+	<form id='newposterform' action="." method="POST">
+		
+		<label for="id_start">Start:</label>
+		{{ form.start }}
+		{% if form.start.errors %}{{ form.start.errors }}{% endif %}
+		
+		<label for="id_end">End:</label>
+		{{ form.end }}
+		{% if form.end.errors %}{{ form.end.errors }}{% endif %}
+		
+		<input class="submit" type="submit" value="Request Poster" />
+		
+		<br />
+		
+		<label for="id_style">Style:</label>
+		{{ form.style }}
+		<small><a href="/about/posters/colours/" target="_new">[help]</a></small>
+		
+		<label for="id_detail">Detail:</label>
+		{{ form.detail }}
+	</form>
+	
+	<table id="posters">
+		<tr>
+			<th class="id">ID</th>
+			<th class="dates">Dates</th>
+			<th class="detail">Detail</th>
+			<th class="color">Colourscheme</th>
+			<th class="status">Status</th>
+		</tr>
+		{% if posters %}
+			{% for poster in posters %}
+				<tr>
+					<td class="id">{{ poster.id }}</td>
+					<td class="dates"><b>{{ poster.start|date:"Y/m/d" }}</b> to <br /><b>{{ poster.end|date:"Y/m/d" }}</b></td>
+					<td class="detail">{{ poster.detail_string }}</td>
+					<td class="color">{{ poster.colorscheme_string }}</td>
+					<td class="status">
+						{% if poster.completed %}
+							Completed! <a href="{{ poster.pdf_url }}">PDF</a> <a href="{{ poster.svg_url }}">SVGZ</a>
+						{% else %}
+							{{ poster.status_string }}
+						{% endif %}
+					</td>
+				</tr>
+			{% endfor %}
+		{% else %}
+			<tr>
+				<td colspan="3" class='nothing'>You have not created any posters recently.</p>
+			</tr>
+		{% endif %}
+	</table>
+	
+{% endblock %}

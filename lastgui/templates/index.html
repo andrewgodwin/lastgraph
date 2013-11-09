@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+	<script src="/static/js/jquery.dimensions.pack.js"></script>
+	<script src="/static/js/jquery.date_input.pack.js"></script>
+	<script src="/static/js/main.js"></script>
+	<style type="text/css" media="screen">
+		@import "/static/css/date_input.css";
+	</style>
+{% endblock %}
+
+{% block content %}
+	
+	<img src="/static/images/logo_med.png" id="logo" />
+	
+	<div id="menu">
+		<span class="fauxlink artists" id="link_artists">artists</span>
+		<span class="fauxlink timeline" id="link_timeline">timeline</span>
+		<span class="fauxlink poster" id="link_poster">posters</span>
+		<span class="fauxlink reset" id="link_reset">reset</span>
+	</div>
+	
+	<div id="loading">
+		<span id="loading_text">Loading...</span>
+	</div>
+	
+	<div class="input">
+		<input id="id_username" autocomplete="off" />
+		<span id="stats">
+			Enter a <em>username</em>, and let's get cracking.
+		</span>
+	</div>
+	
+	<div id="front-content">
+		{% include "fragments/front.html" %}
+	</div>
+	
+	<div id="intro-content">
+		{% include "fragments/intro.html" %}
+	</div>
+	
+	<div id="poster-content">
+		{% include "fragments/poster.html" %}
+	</div>
+	
+	<div id="content">
+	
+	</div>
+	
+	<h2 id="page-title"></h2>
+	
+	<div id="footer">
+		<a href="http://www.aeracode.org">
+			<img src="/static/images/aera_footer.png" class="aera" />
+		</a>
+	</div>
+	
+{% endblock %}

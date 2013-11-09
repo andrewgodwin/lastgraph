@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}About Posters{% endblock %}
+
+{% block content %}
+	
+	<div class="padded">
+	
+		<h1>About Posters</h1>
+		
+		<p>Posters are large, complex representations of your music history. They're the main reason LastGraph exists, and as a bonus they look nice on your wall.</p>
+		
+		<p><img src="/static/images/wavegraph.png" class="front" /></p>
+		
+		<p>Unlike the graphs on the artists pages, which we can create on-the-fly, the posters can take upwards of several minutes to create and so we have a queueing system in place. When you request a poster, you'll be put into the rendering queue - usually they're finished inside of half an hour.</p>
+		
+		<p>If you put an email address in, you'll get an email when it's complete, otherwise you should come back and check your posters page every so often. When it's finished, you will be able to download it as a PDF or an SVG. Be warned that the posters are extremely complex pictures; displaying one can bring even a modern computer to its knees for a few seconds.</p>
+		
+		<p>The posters are inspired by Lee Byron's <a href="http://megamu.com/lastfm/">What have I been listening to?</a> project; his look much nicer, but aren't available via an on-demand online system.</p>
+		
+	</div>
+	
+{% endblock %}

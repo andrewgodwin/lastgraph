@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}System Status{% endblock %}
+
+{% block content %}
+	
+	<div class="padded">
+	
+		<h1>System Status</h1>
+		
+		<h2>Queues</h2>
+		
+		<p>
+		
+		{% with fetchqueue.count as flen %}
+		There {{ flen|pluralize:"is, are" }} currently {{ flen }} {{ flen|pluralize:"person,people" }} in the <b>fetch queue</b>, 
+		{% endwith %}
+		
+		{% with renderqueue.count as rlen %}
+		and {{ rlen }} {{ rlen|pluralize:"person,people" }} in the <b>render queue</b>.
+		{% endwith %}
+		
+		</p>
+		
+		<h2>Totals</h2>
+		
+		<p>There {{ numprofiles|pluralize:"is, are" }} <b>{{ numprofiles }} user profile{{ numprofiles|pluralize }}</b> currently tracked, with a total of <b>{{ numposters }} poster{{ numposters|pluralize }}</b>.</p>
+		
+		<h2>Posters</h2>
+		
+		<p>The last few posters to be rendered were for {% for poster in recentposters %}{% if forloop.last %} and {% endif %}<a href="{{ poster.user.get_absolute_url }}">{{ poster.user.username }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+		
+		<h2>Nodes</h2>
+		
+		{% with nodes.count as numnodes %}
+		<p>There {{ numnodes|pluralize:"is, are" }} <b>{{ numnodes }} render node{{ numnodes|pluralize }}</b> online.</p>
+		{% endwith %}
+		
+	</div>
+	
+{% endblock %}

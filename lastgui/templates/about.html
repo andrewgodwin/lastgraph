@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}About LastGraph{% endblock %}
+
+{% block content %}
+	
+	<div class="padded">
+	
+		<h1>About LastGraph</h1>
+		
+		<p>LastGraph is a web-based service that aims to give you a new way to explore your <a href="http://www.last.fm">last.fm</a> listening history. We use the last.fm API to transfer across your basic profile data, and then crunch it around in various interesting (and often hilariously inefficient) ways.</p>
+		
+		<p>The site is written and run by <a href="http://www.aeracode.org">Andrew Godwin</a>.</p>
+		
+		<h2>Features</h2>
+		
+		<p>LastGraph currently offers the following:</p>
+		<ul class="nice">
+			<li>Live browsing of individual <a href="artists/">artist histories</a>, as well as your entire artist chart.</li>
+			<li><a href="posters/">Rendered posters</a>, displaying your musical history in a pretty and digestable format.</li>
+			<li>Data export of your profile data in various formats.</li>
+		</ul>
+		<p>It's now over five years old, and so unlikely to gain any improvements, but if it stops working then get in touch with me andrew&nbsp;at&nbsp;aeracode&nbsp;dot&nbsp;org.</p>
+		
+		<h2>Speed</h2>
+		
+		<p>LastGraph can often be a bit slow to load your profile, as we're limited to pulling data in from last.fm at ten requests a second, so your profile could take up to 20 seconds to be fetched once you reach the head of the fetching queue.</p>
+		
+		<p>Once you've queued up a fetch (or a poster), you can go somewhere else and come back later to see how far we've got with it; you can just type your name in the box again to see.</p>
+		
+		<h2>Problems</h2>
+		
+		<p>If you find any bugs or problems in the site, then please email/jabber me at andrew&nbsp;at&nbsp;aeracode&nbsp;dot&nbsp;org. I'll try and get back to you (and hopefully fix any problems) as soon as I can, but be aware there are in fact times when I'm really not sitting at my computer.</p>
+		
+		<h2>Technology</h2>
+		
+		<p>The LastGraph interface, live graphs and queueing/scheduling system are written in <a href="http://www.djangoproject.org">Django</a>, and the poster renderer is a plain <a href="http://www.python.org">Python</a> application, using my own <a href="http://www.aeracode.org/projects/graphication/">Graphication</a> graphing library, developed specifically for LastGraph. Posters are stored and served from <a href="http://aws.amazon.com/s3">Amazon S3</a>.</p>
+		
+		<p>If you'd like to know more about the technology behind LastGraph, then have a look at my <a href="http://www.aeracode.org/projects/lastgraph/">project page</a> for it, or sling me an email at andrew&nbsp;at&nbsp;aeracode&nbsp;dot&nbsp;org - I'll be happy to discuss it with you.</p>
+		
+	</div>
+	
+{% endblock %}

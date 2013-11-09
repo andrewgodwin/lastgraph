@@ -1,0 +1,15 @@
+wavegraph grid#x.major line {
+	color: #0000;
+	width: 0;
+}
+wavegraph grid#x.minor line {
+	color: #0000;
+	width: 0;
+}
+wavegraph grid#x.major label {
+	color: #0000;
+}
+wavegraph grid#x.minor label {
+	color: #0000;
+}
+

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Signature Images{% endblock %}
+
+{% block tagline %}Some <em>signature images</em> for {{ username }}.{% endblock %}
+
+{% block content %}
+	
+	<div class="padded">
+	
+		<h1>Signature Images</h1>
+		
+		<p>These signature images will change to reflect your music history as we get more data.</p>
+		
+		<p>
+			<img src="/graph/{{username}}/sig1/" />
+		</p>
+		<pre>http://lastgraph.aeracode.org/graph/{{username}}/sig1/</pre>
+		
+		<p>&nbsp;</p>
+		
+		<p>
+			<img src="/graph/{{username}}/sig1/500/50/" />
+		</p>
+		<pre>http://lastgraph.aeracode.org/graph/{{username}}/sig1/500/50/</pre>
+		
+		<p>&nbsp;</p>
+		
+	</div>
+	
+{% endblock %}

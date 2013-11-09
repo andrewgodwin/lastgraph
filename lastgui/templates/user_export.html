@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ username }}'s Data Export{% endblock %}
+
+{% block tagline %}Here you can <em>export data</em> for {{ username }}.{% endblock %}
+
+{% block content %}
+	
+	<p class="padded">You can download the current data we have for {{ username }} as a variety of formats. Feeds of the entire data set are available below; alternatively, you can get individual artist exports on the <a href="../artists/">artists pages</a>.</p>
+	
+	<ul class="files">
+		<!-- <li class="xls"><a href="all.xls">All data, Excel format</a></li> -->
+		<li class="csv"><a href="all.csv">All data, CSV format</a></li>
+		<li class="json"><a href="all.json">All data, JSON format</a></li>
+	</ul>
+	
+{% endblock %}

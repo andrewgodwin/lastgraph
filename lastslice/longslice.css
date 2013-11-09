@@ -1,0 +1,31 @@
+* {
+	font-family: HelveticaNeue LT 55 Roman;
+}
+
+colourer {
+	gradient-start: #334489;
+	gradient-end: #2d8f3c;
+}
+
+grid.major line {
+	color: #666;
+	width: 1;
+}
+
+grid.minor line {
+	color: #ddd;
+	width: 1;
+}
+
+grid.major label {
+	padding: 17;
+}
+
+wavegraph {
+	dimming-top: 1.5;
+	dimming-bottom: 0.2;
+}
+
+wavegraph curve {
+	color: #fff;
+}

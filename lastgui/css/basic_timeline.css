@@ -1,0 +1,31 @@
+canvas.png {
+	background-color: #fff0;
+}
+wavegraph {
+	vertical-align: bottom;
+	height: 100%;
+}
+grid#x.major label {
+	padding: 0;
+	font-size: 0;
+	color: #0000;
+}
+grid#x.minor label {
+	padding: 0;
+	font-size: 0;
+	color: #0000;
+}
+grid#y.major line {
+	color: #0000;
+}
+grid#y.major label {
+	padding: 0;
+	font-size: 0;
+	color: #0000;
+}
+grid#x.major line {
+	color: #0000;
+}
+grid#x.minor line {
+	color: #0000;
+}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ username }}'s Artists{% endblock %}
+
+{% block tagline %}This is {{ username }}'s <em>artists</em>. Click one to see a history.{% endblock %}
+
+{% block content %}
+	
+	<table id="artists">
+		{% for plays, artist, width in artists %}
+			<tr>
+				<td class='name'><a href="../artist/{{ artist }}/">{{ artist }}</a></td>
+				<td class='plays'><div style='width:{{ width }}%'><span>{{ plays }}</span></div></td>
+			</tr>
+		{% endfor %}
+	</table>
+	
+{% endblock %}

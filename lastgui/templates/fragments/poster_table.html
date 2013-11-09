@@ -1,0 +1,16 @@
+<tr>
+	<th>Start</th>
+	<th>End</th>
+	<th>Status</th>
+</tr>
+{% if posters %}
+	{% for poster in posters %}
+		<tr>
+			<td class="start">{{ poster.start|date:"Y/m/d" }}</td>
+		</tr>
+	{% endfor %}
+{% else %}
+	<tr>
+		<td colspan="3" class='nothing'>You have not created any posters recently.</p>
+	</tr>
+{% endif %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ username }}: {{ artist }}{% endblock %}
+
+{% block tagline %}This is {{ username }}'s history for <em>{{ artist }}</em>.{% endblock %}
+
+{% block content %}
+	
+	<img class="resizeable_graph" src="/graph/{{ username }}/artist/{{ artist }}/" />
+	
+	<div class="export">
+		Export:&nbsp;
+		<!-- <a href="../../export/artist/{{ artist }}.xls" title="This data in XLS">
+			<img src="/static/images/page_excel.png" alt="This data in XLS" />
+		</a> -->
+		<a href="../../export/artist/{{ artist }}.csv" title="This data in CSV">
+			<img src="/static/images/page_white_text.png" alt="This data in CSV" />
+		</a>
+		<a href="../../export/artist/{{ artist }}.json" title="This data in JSON">
+			<img src="/static/images/page.png" alt="This data in JSON" />
+		</a>
+	</div>
+	
+{% endblock %}

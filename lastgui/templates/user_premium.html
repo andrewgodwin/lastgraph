@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Premium{% endblock %}
+
+{% block tagline %}Spend some <em>money</em>, get some stuff...{% endblock %}
+
+{% block content %}
+	
+	<div class="padded">
+	
+		<h1>LastGraph Premium</h1>
+		
+		{% if lfuser.external_allowed %}
+			<div class="notice">
+				Excellent! <b>{{ username }}</b> has Premium enabled until&nbsp;{{ lfuser.external_until|date:"Y/m/d" }}.<br /> <small>(that's another {{ lfuser.external_until|timeuntil }})</small>
+			</div>
+		{% endif %}
+		
+		<p>All the on-site features of LastGraph are completely free and ad-free, and will hopefully remain so forever. However, money to pay for the bandwidth has to come from somewhere! In the past, we have accepted donations, but it's time there was something in return when you give us some money.</p>
+		
+		<p>So, there is LastGraph Premium. In return for a small (annual) fee, we'll enable <b>hotlinking for your graphs</b> (so you can include them on your own website), and give you access to some small <b>dynamic signature images</b> you can use for forums or other similar things. You also get the priceless feeling of warm fuzziness for helping us out.</p>
+		
+		<p>Premium costs just $10 / &pound;5 a year, and is tied to your last.fm username. You're currently looking at <b>{{ username }}</b>'s profile; if this is you, you can buy Premium below, otherwise find your profile on this site and click the 'Premium' link at the top.</p>
+		
+		<p>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_xclick">
+				<input type="hidden" name="business" value="andrew@aeracode.org">
+				<input type="hidden" name="item_name" value="LastGraph Premium for {{username}}">
+				<input type="hidden" name="item_number" value="Pr{% now "Ymd" %}">
+				<input type="hidden" name="amount" value="5.00">
+				<input type="hidden" name="shipping" value="0.00">
+				<input type="hidden" name="no_shipping" value="1">
+				<input type="hidden" name="return" value="http://lastgraph.aeracode.org/user/{{ username }}/premium/paid/">
+				<input type="hidden" name="cancel_return" value="http://lastgraph.aeracode.org/user/{{ username }}/premium/">
+				<input type="hidden" name="cn" value="Any comments?">
+				<input type="hidden" name="currency_code" value="GBP">
+				<input type="hidden" name="tax" value="0.00">
+				<input type="hidden" name="lc" value="GB">
+				<input type="submit" value="Purchase Premium for {{ username }}, using PayPal &raquo;">
+			</form>
+			<p class="undersub">Don't want to use PayPal? Email me at andrew at aeracode dot org for other payment options.</p>
+		</p>
+		
+	</div>
+	
+{% endblock %}
